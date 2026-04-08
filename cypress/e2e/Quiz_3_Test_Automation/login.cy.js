@@ -1,8 +1,6 @@
 describe('Login OrangeHRM', () => {
 
   beforeEach(() => {
-    // cy.clearCookies()
-    // cy.clearLocalStorage()
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
   })
 
