@@ -9,6 +9,7 @@ describe('Login OrangeHRM - POM', () => {
 
   it('TC-001 Login tanpa username dan password', () => {
     loginPage.loginButton()
+    loginPage.verifyRequired()
   }) 
 
   it('TC-002 Login dengan username huruf besar', () => {
@@ -22,6 +23,7 @@ describe('Login OrangeHRM - POM', () => {
     loginPage.inputUser(loginData.validUser)
     loginPage.inputPass(loginData.invalidPassBesar)
     loginPage.loginButton()
+    loginPage.verifyInvalidCredentials()
   }) 
 
   it('TC-004 Login dengan spasi setelah username', () => {
@@ -42,6 +44,7 @@ describe('Login OrangeHRM - POM', () => {
       loginPage.inputUser(loginData.validUser)
       loginPage.inputPass(loginData.validPass)
       loginPage.loginButton()
+      loginPage.verifyLogin()
       // Session terbentuk secara otomatis saat login berhasil, jadi saya validasi melalui redirect ke dashboard
   })
 
@@ -49,12 +52,14 @@ describe('Login OrangeHRM - POM', () => {
     loginPage.inputUser(loginData.invalidUserAngka)
     loginPage.inputPass(loginData.validPass)
     loginPage.loginButton()
+    loginPage.verifyInvalidCredentials()
   }) 
 
   it('TC-008 Login dengan username salah', () => {
     loginPage.inputUser(loginData.invalidUserS)
     loginPage.inputPass(loginData.validPass)
     loginPage.loginButton()
+    loginPage.verifyInvalidCredentials()
   }) 
 
 it('TC-009 Klik login berkali-kali', () => {
@@ -63,6 +68,7 @@ it('TC-009 Klik login berkali-kali', () => {
     loginPage.clickLoginMultiple(5)
     loginPage.verifyLogin()
   }) 
+
 
 
 })

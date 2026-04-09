@@ -4,11 +4,11 @@ class loginPage {
     }
 
     inputUser(username) {
-        cy.get('[name="username"]').type(username)
+        cy.get('[name="username"]').clear().type(username)
     }
 
     inputPass(password) {
-        cy.get('[name="password"]').type(password)   
+        cy.get('[name="password"]').clear().type(password) 
     }
 
     loginButton() {
@@ -24,10 +24,23 @@ class loginPage {
     cy.get('[name="password"]').should('have.value', "")
     }
 
-    clickLoginMultiple(times = 3) {
-    cy.get('.oxd-button').click({ multiple: true })
+    clickLoginMultiple() {
+    cy.get('.oxd-button').then(($btn) => {
+        for (let i = 0; i < 5; i++) {
+        $btn.click()
+        }
+      })
     }
-
+    
+    verifyInvalidCredentials() {
+    cy.get('.oxd-alert-content-text')
+    .should('be.visible')
+    .and('contain', 'Invalid credentials')
+    }
+    
+    verifyRequired() {
+    cy.contains('Required').should('be.visible')
+    }
 
 }
 
