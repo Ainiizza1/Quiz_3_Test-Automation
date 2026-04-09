@@ -1,0 +1,12 @@
+{
+    "validUser" : "Admin",
+    "validPass" : "admin123",
+    "invalidUser" : "wrong_user",
+    "invalidPass" : "wrong_password",
+    "invalidUserBesar" : "ADMIN",
+    "invalidPassBesar" : "ADMIN123",
+    "invalidUserspace" : "Admin ",
+    "invalidUserAngka" : "Admin123",
+    "invalidUserS" : "Admins"
+
+}
