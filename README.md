@@ -8,3 +8,6 @@
 
 * **Tugas 17** → `cypress/e2e/Tugas_17_Create_Automation_with_POM/login_POM.cy`
                   Berisi Automation menggunakan format with POM
+                  
+* **Tugas 18** → `cypress/e2e/Tugas_18_API_Automation_using_Cypress/Tugas18_api.cy`
+                  Berisi Automation API menggunakan cypress
